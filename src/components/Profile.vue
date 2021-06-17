@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-center">
+  <div class="flex items-center justify-center mb-10">
     <div class="card w-72">
       <img class="card-img-top" :src="user.avatar_url" />
       <ul class="flex flex-col items-center">

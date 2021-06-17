@@ -11,17 +11,21 @@
           @keyup="getUser"
           id="search"
           type="text"
-          class="form-control w-1/4"
+          class="form-control w-1/4 sm:w-1/2"
           required
         />
       </div>
-      <div class="flex flex-row mt-3" v-if="user.length !== 0">
+      <div class="flex flex-row mt-3 sm:hidden" v-if="user.length !== 0">
         <div class="col-md-4">
           <Profile :user="user" />
         </div>
         <div class="col-md-8">
           <Repo v-for="repo in repos" :key="repo" :repo="repo" />
         </div>
+      </div>
+      <div class="hidden sm:flex sm:flex-col sm:mt-3 sm:mx-10" v-if="user.length !== 0">
+          <Profile :user="user" />
+          <Repo v-for="repo in repos" :key="repo" :repo="repo" />
       </div>
     </div>
   </div>
