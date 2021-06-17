@@ -17,12 +17,22 @@
         </li>
       </ul>
       <div class="my-4 w-full text-center">
-        <a
-          :href="user.html_url"
-          class="btn btn-success btn-block"
-          target="_blank"
-        >
-          Ver perfil</a
+        <router-link
+        class="btn btn-success btn-block"
+          :to="{
+            name: 'About',
+            params: {
+              blog: user.blog,
+              avatar: user.avatar_url,
+              followers: user.followers,
+              following: user.following,
+              html_url: user.html_url,
+              location: user.location,
+              login: user.login,
+              public_repos: user.public_repos,
+            },
+          }"
+          >Ver dados</router-link
         >
       </div>
     </div>

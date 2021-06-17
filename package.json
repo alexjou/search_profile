@@ -11,9 +11,11 @@
     "autoprefixer": "^9",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "lodash": "^4.17.21",
     "postcss": "^7",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
     "vue": "^3.0.0",
+    "vue-debounce": "^2.6.0",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"
   },

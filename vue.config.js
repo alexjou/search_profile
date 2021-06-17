@@ -1,3 +1,3 @@
-module.exports = {
-  publicPath: "/search_profile",
-};
+// module.exports = {
+//   publicPath: "/search_profile",
+// };

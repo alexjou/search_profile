@@ -1,10 +1,12 @@
 <template>
   <div class="home">
-    <Navbar/>
+    <Navbar />
     <div class="mx-4 flex flex-col">
       <div class="p-4 text-center flex flex-col items-center">
         <h1 class="text-2xl">Pesquise usuários do Github</h1>
-        <p class="my-2">Digite um nome para encontrar usuários ou repositórios</p>
+        <p class="my-2">
+          Digite um nome para encontrar usuários ou repositórios
+        </p>
         <input
           @keyup="getUser"
           id="search"
@@ -54,20 +56,23 @@ export default {
   },
   methods: {
     getUser(doc) {
+      setTimeout(() => {        
       const user = doc.target.value;
-      const { url, client_id, client_secret, count, sort } = this.github;
-
+        const { url, client_id, client_secret, count, sort } = this.github;
       axios
         .get(
           `${url}/${user}?client_id=${client_id}&client_secret=${client_secret}`
         )
-        .then(({ data }) => (this.user = data));
+        .then(({ data }) => (this.user = data))
+        .catch((error) => console.log(error));
 
       axios
         .get(
           `${url}/${user}/repos?per_page=${count}&sort${sort}&client_id=${client_id}&client_secret=${client_secret}`
         )
-        .then(({ data }) => (this.repos = data));
+        .then(({ data }) => (this.repos = data))
+        .catch((error) => console.log(error));
+          }, 2000);
     },
   },
 };
